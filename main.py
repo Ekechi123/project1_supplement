@@ -27,14 +27,18 @@ def string_length(s):
 
 def update_dict(d, key, value):
     """
-    Update the value of a key in a dictionary. If the key doesn't exist, add it.
+    Update the value of a key in a dictionary by adding the value to the existing key.
+    If the key doesn't exist, add it with the provided value.
 
     Args:
         d (dict): The dictionary to update.
         key (str): The key to update/add.
-        value: The value to assign to the key.
+        value (int/float): The value to add to the key.
 
     Returns:
         None
     """
-    d[key] = value
+    if key in d:
+        d[key] += value  # Increment existing value
+    else:
+        d[key] = value  # Add new key-value pair
